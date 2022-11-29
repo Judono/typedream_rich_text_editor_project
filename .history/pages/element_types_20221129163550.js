@@ -1,7 +1,7 @@
 import React from 'react'
 import { useFocused, useSelected } from 'slate-react'
 import { css } from '@emotion/react'
-// import Image from 'next/image'
+import { Image } from '@mui/icons-material';
 
 export const CodeElement = props => {
     return (
@@ -71,10 +71,10 @@ export const ImageElement = ({ attributes, children, element }) => {
             position: relative;
           `}
         >
-          <img
+          <Image
             src={element.url}
-            // width={400}
-            // height={400}
+            width={400}
+            height={400}
             className={css`
               display: block;
               max-width: 100%;

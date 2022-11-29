@@ -28,7 +28,7 @@ const insertImage = (editor, url) => {
     
     switch (element.type) {
         case 'image':
-        return <img {...props} />
+        return <Image {...props} />
         default:
         return <p {...attributes}>{children}</p>
     }

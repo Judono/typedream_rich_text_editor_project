@@ -2,6 +2,7 @@ import React from 'react'
 import { Transforms } from 'slate'
 import ImageIcon from '@mui/icons-material/Image';
 import { Button } from '@mui/material';
+import { Image } from '@mui/icons-material';
 
 export const InsertImageButton = ({editor}) => {
     return (
@@ -28,7 +29,7 @@ const insertImage = (editor, url) => {
     
     switch (element.type) {
         case 'image':
-        return <img {...props} />
+        return <Image {...props} />
         default:
         return <p {...attributes}>{children}</p>
     }

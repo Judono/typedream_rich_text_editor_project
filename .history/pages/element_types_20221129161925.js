@@ -1,7 +1,7 @@
 import React from 'react'
 import { useFocused, useSelected } from 'slate-react'
 import { css } from '@emotion/react'
-// import Image from 'next/image'
+import Image from 'next/image'
 
 export const CodeElement = props => {
     return (
@@ -14,7 +14,7 @@ export const CodeElement = props => {
 export const QuoteElement = props => {
     return (
       <pre {...props.attributes} style={{color:'grey'}}>
-        <center><em>{props.children}</em></center>
+        <center><em>"{props.children}"</em></center>
       </pre>
     )
   }
@@ -73,15 +73,12 @@ export const ImageElement = ({ attributes, children, element }) => {
         >
           <img
             src={element.url}
-            // width={400}
-            // height={400}
             className={css`
               display: block;
               max-width: 100%;
               max-height: 20em;
               box-shadow: ${selected && focused ? '0 0 0 3px #B4D5FF' : 'none'};
             `}
-            alt={''}
           />
         </div>
       </div>

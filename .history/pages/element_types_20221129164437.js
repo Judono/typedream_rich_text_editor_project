@@ -71,7 +71,7 @@ export const ImageElement = ({ attributes, children, element }) => {
             position: relative;
           `}
         >
-          <img
+          <Image
             src={element.url}
             // width={400}
             // height={400}
