@@ -1,9 +1,9 @@
 import React, { useCallback, useState } from 'react'
 import { createEditor} from 'slate'
 import { Editable, Slate, withReact } from 'slate-react'
-import CustomEditor from '../components/custom_editor'
-import { CenterAligElement, CodeElement, DefaultElement, ImageElement, LeftAlignElement, QuoteElement, RightAligElement, H1Element, H2Element } from '../components/element_types'
-import SlateLeaf from '../components/slate_leaf'
+import CustomEditor from './custom_editor'
+import { CenterAligElement, CodeElement, DefaultElement, ImageElement, LeftAlignElement, QuoteElement, RightAligElement, H1Element, H2Element } from './element_types'
+import SlateLeaf from './slate_leaf'
 import SlateToolbar from './toolbar'
 
 const initialValue = [
@@ -50,7 +50,7 @@ const initialValue = [
     ]
 
 export default function RichtText() {
-    const [myEditor] = useState(() => withReact(createEditor()))
+    const [editor] = useState(() => withReact(createEditor()))
 
   const renderElement = useCallback(props => {
     switch (props.element.type) {
@@ -69,7 +69,7 @@ export default function RichtText() {
       case 'rightAlign':
         return <RightAligElement {...props} />
       case 'image':
-        return <ImageElement {...props} editor={myEditor} />
+        return <ImageElement {...props} editor={editor} />
       default:
         return <DefaultElement {...props} />
     }
@@ -82,12 +82,12 @@ export default function RichtText() {
 
   return (
     // Toolbar
-    <Slate editor={myEditor} value={initialValue}>
+    <Slate editor={editor} value={initialValue}>
 
-        <SlateToolbar editor={myEditor} />
+        <SlateToolbar editor={editor} />
 
         <Editable
-            editor={myEditor}
+            editor={editor}
             renderElement={renderElement}
             renderLeaf={renderLeaf}
             onKeyDown={event => {
@@ -98,37 +98,37 @@ export default function RichtText() {
             switch (event.key) {
                 case "'": {
                 event.preventDefault()
-                CustomEditor.toggleCodeBlock(myEditor)
+                CustomEditor.toggleCodeBlock(editor)
                 break
                 }
 
                 case 'b': {
                 event.preventDefault()
-                CustomEditor.toggleBoldMark(myEditor)
+                CustomEditor.toggleBoldMark(editor)
                 break
                 }
 
                 case 'i': {
                 event.preventDefault()
-                CustomEditor.toggleItalicMark(myEditor)
+                CustomEditor.toggleItalicMark(editor)
                 break
                 }
 
                 case 'u': {
                 event.preventDefault()
-                CustomEditor.toggleUnderlineMark(myEditor)
+                CustomEditor.toggleUnderlineMark(editor)
                 break
                 }
 
                 case '5': {
                 event.preventDefault()
-                CustomEditor.toggleH1Block(myEditor)
+                CustomEditor.toggleH1Block(editor)
                 break
                 }
 
                 case '6': {
                 event.preventDefault()
-                CustomEditor.toggleH2Block(myEditor)
+                CustomEditor.toggleH2Block(editor)
                 break
                 }
             }

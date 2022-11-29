@@ -2,8 +2,8 @@ import React, { useCallback, useState } from 'react'
 import { createEditor} from 'slate'
 import { Editable, Slate, withReact } from 'slate-react'
 import CustomEditor from '../components/custom_editor'
-import { CenterAligElement, CodeElement, DefaultElement, ImageElement, LeftAlignElement, QuoteElement, RightAligElement, H1Element, H2Element } from '../components/element_types'
-import SlateLeaf from '../components/slate_leaf'
+import { CenterAligElement, CodeElement, DefaultElement, ImageElement, LeftAlignElement, QuoteElement, RightAligElement, H1Element, H2Element } from './element_types'
+import SlateLeaf from './slate_leaf'
 import SlateToolbar from './toolbar'
 
 const initialValue = [

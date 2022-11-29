@@ -1,6 +1,6 @@
 import React from 'react'
 import CustomEditor from '../components/custom_editor'
-import { InsertImageButton } from '../components/images'
+import { InsertImageButton } from './images'
 
 import FormatAlignCenterIcon from '@mui/icons-material/FormatAlignCenter';
 import FormatAlignLeftIcon from '@mui/icons-material/FormatAlignLeft';
